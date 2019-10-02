@@ -3,30 +3,35 @@ var router = express.Router();
 const { Genre , validate } = require('../models/genre');
 const admin = require('../middleware/admin');
 const auth = require('../middleware/auth');
-
+// const asyncMiddleware = require('../middleware/async') ;
 const mongoose = require('mongoose');
+const winston = require('winston');
+
 
 router.get('/',async (req,res)=>{
-	
-		
-		const genres = await Genre.find().sort('name');
-        res.send(genres);
-	
-	
-		// console.log("within exception ");
-		// res.status(500).send('Something Failed');
-	
 
-	
+	if(mongoose.connection.readyState == 1){
+      const genres = await Genre.find().sort('name');
+        res.send(genres);
+	}else{
+		const ex = {
+			message:"500 internal Server Error "
+		}
+		winston.error(ex.message);
+		res.send("500 internal Server Error ");
+    
+	}
+
 })
+
 router.post('/',async (req,res)=>{
-	const token = req.header('x-auth-token');
 	const {error} = validate(req.body);
 	 if(error) return res.status(400).send(error.details[0].message);
 	 let genre = new Genre({name: req.body.name});
-
 	 await genre.save();
 	 res.send(genre);
+     
+	 
 })
 
 router.put('/:id',async (req,res)=>{
@@ -41,13 +46,6 @@ router.put('/:id',async (req,res)=>{
 	  	   if(err) return res.status(404).send("Genres with id Not found");
 	  	   return res.send(result);
 	  });
-
-	 
-	 // if(!genre) return res.status(404).send("Genre with given id is not present");
-	
-	 // genre.name = req.body.name;
-	 // res.send(genre);
-
 	
 	
 
