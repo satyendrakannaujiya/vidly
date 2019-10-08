@@ -6,25 +6,28 @@ const auth = require('../middleware/auth');
 // const asyncMiddleware = require('../middleware/async') ;
 const mongoose = require('mongoose');
 const winston = require('winston');
+const validateObjectId = require('../middleware/validateObjectId');
 
 
 router.get('/',async (req,res)=>{
 
+    
 	if(mongoose.connection.readyState == 1){
+		
       const genres = await Genre.find().sort('name');
         res.send(genres);
 	}else{
 		const ex = {
-			message:"500 internal Server Error "
+			message:"500 internal Server Error from genres GET / "
 		}
 		winston.error(ex.message);
-		res.send("500 internal Server Error ");
+		res.send("500 internal Server ");
     
 	}
 
 })
 
-router.post('/',async (req,res)=>{
+router.post('/',auth,async (req,res)=>{
 	const {error} = validate(req.body);
 	 if(error) return res.status(400).send(error.details[0].message);
 	 let genre = new Genre({name: req.body.name});
@@ -60,9 +63,10 @@ router.delete('/:id',[auth,admin],async (req,res)=>{
 
 })
 
-router.get('/:id',async (req,res)=>{
+router.get('/:id',validateObjectId, async (req,res)=>{
 
-	 const genre = Genre.findById(req.params.id);
+
+	 const genre = await Genre.findById(req.params.id);
 	   if(!genre) res.status(404).send('Genre with given id is not present');
 	   res.send(genre);
 

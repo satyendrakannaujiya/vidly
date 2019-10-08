@@ -1,14 +1,17 @@
 
 const mongoose = require('mongoose');
 const winston = require('winston');
+const config = require('config');
 module.exports  = function(){
-mongoose.connect('mongodb://localhost/vidly',{
+	
+const db = config.get('db');
+mongoose.connect(db,{
 
     autoReconnect: true,
     reconnectTries: 1000000,
     reconnectInterval: 3000,
     bufferMaxEntries: 0
 }).then(()=>{
-	winston.info('Connected to MongoDB...');
+	winston.info('Connected to '+db);
 })
 }

@@ -5,18 +5,13 @@ var router = express.Router();
 
 
 router.get('/',async (req,res)=>{
-
 	const customers = await Customer.find().sort('name');
 	res.send(customers);
-
-
 })
 
 router.put('/:id',async (req,res)=>{
-
-        const { error } = validate(req.body);
-
-          if(error) return res.status(400).send(error.details[0].message);
+      const { error } = validate(req.body);
+     if(error) return res.status(400).send(error.details[0].message);
 	Customer.findByIdAndUpdate(req.params.id,{
 		name:req.body.name,
 		phone:req.body.phone
