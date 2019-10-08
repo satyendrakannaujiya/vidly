@@ -490,3 +490,21 @@
 {"message":"Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Genre\"","stack":"CastError: Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Genre\"\n    at new CastError (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/error/cast.js:29:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/schema/objectid.js:244:11)\n    at ObjectId.Object.<anonymous>.SchemaType.applySetters (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/schematype.js:948:12)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/schematype.js:1362:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQuery (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/schematype.js:1352:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/schematype.js:1331:15)\n    at cast (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/cast.js:307:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/query.js:4638:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/query.js:1834:10)\n    at model.Query.<anonymous> (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/query.js:2089:8)\n    at model.Query._wrappedThunk [as _findOne] (/home/satyendra/Training/Mosh course/vidly/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)\n    at process.nextTick (/home/satyendra/Training/Mosh course/vidly/node_modules/kareem/index.js:369:33)\n    at process._tickCallback (internal/process/next_tick.js:61:11)","name":"CastError","stringValue":"\"1\"","kind":"ObjectId","value":"1","path":"_id","level":"error","timestamp":"2019-10-08T06:38:18.044Z"}
 {"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T06:38:18.721Z"}
 {"level":"info","message":"Connected to mongodb://localhost/vidly_test","timestamp":"2019-10-08T06:38:19.521Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:40:08.631Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:40:09.339Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:41:29.606Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:41:29.694Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:42:03.396Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:42:03.515Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:42:24.927Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:42:25.034Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:43:11.198Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:43:11.304Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:44:53.616Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:44:53.673Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:46:46.818Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:46:46.954Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:55:10.248Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:55:10.392Z"}
+{"level":"info","message":"Application is listening on port 3000","timestamp":"2019-10-08T13:55:44.476Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly","timestamp":"2019-10-08T13:55:44.565Z"}
